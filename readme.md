@@ -6,10 +6,10 @@ fastapi dev main.py
 # test con httpie:
 https https://back-account-app-test.onrender.com
 https https://back-account-app-test.onrender.com/create-user/
+http POST https://back-account-app-test.onrender.com/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45
 
 # Local test:
-http POST http://127.0.0.1:8000/create-user/ user_name=waripolo user_em
-ail=waripolio@waripas.cl user_key=chocolate45
+http POST http://127.0.0.1:8000/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45
 
 TODO:
 -api login
