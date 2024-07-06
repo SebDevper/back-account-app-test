@@ -4,12 +4,12 @@ source env/bin/activate
 fastapi dev main.py
 
 # Production tests:
-`
-https https://back-account-app-test.onrender.com/create-user/
-http POST https://back-account-app-test.onrender.com/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45
-https POST https://back-account-app-test.onrender.com/login/ user_email=waripolio@waripas.cl user_key=chocolate45
-https https://back-account-app-test.onrender.com/get_bank_data/ token:soy_un_token
-`
+
+`https https://back-account-app-test.onrender.com/create-user/`
+`http POST https://back-account-app-test.onrender.com/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45`
+`https POST https://back-account-app-test.onrender.com/login/ user_email=waripolio@waripas.cl user_key=chocolate45`
+`https https://back-account-app-test.onrender.com/get_bank_data/ token:soy_un_token`
+
 
 
 # Local test:
@@ -21,9 +21,9 @@ http POST http://127.0.0.1:8000/create-user/ user_name=waripolo user_email=warip
 `
 http POST http://127.0.0.1:8000/login/ user_email=waripolio@waripas.cl user_key=chocolate45
 `
-## Get bank data
+## Get accounts
 `
-http http://127.0.0.1:8000/get_bank_data/ token:soy_un_token
+http http://127.0.0.1:8000/get_accounts_by_bank/ token:soy_un_token
 `
 
 TODO:
