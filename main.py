@@ -1,5 +1,6 @@
 from typing import Annotated, Union
 from fastapi import FastAPI, Header
+from fastapi.middleware.cors import CORSMiddleware
 from api_controllers.create_user import create_new_user
 from api_controllers.login import login
 from api_controllers.accounts import get_accounts
@@ -9,6 +10,19 @@ from db_actions.token import get_token
 import os
 
 app = FastAPI()
+
+origins = [
+    "http://127.0.0.1:8080",
+    "https://front-account-test-project-5u6m.vercel.app"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
