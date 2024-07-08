@@ -5,10 +5,14 @@ fastapi dev main.py
 
 # Production tests:
 
-`https https://back-account-app-test.onrender.com/create-user/`
-`http POST https://back-account-app-test.onrender.com/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45`
+## register
+`https https://back-account-app-test.onrender.com/create-user/ user_name=waripolo user_email=waripolio@waripas.cl user_key=chocolate45`
+
+## login
 `https POST https://back-account-app-test.onrender.com/login/ user_email=waripolio@waripas.cl user_key=chocolate45`
-`https https://back-account-app-test.onrender.com/get_bank_data/ token:soy_un_token`
+
+## get accounts
+`https https://back-account-app-test.onrender.com/get_accounts_by_bank/ token:soy_un_token`
 
 
 
