@@ -70,7 +70,8 @@ def get_accounts():
     return {'status': 1, 'accounts': accounts_by_bank}
 
 def get_accounts_by_bank_from_api(bank_code: str):
-    url = f'{os.environ['BELVO_ACCOUNTS_LIST']}&institution={bank_code}'
+    base_url = os.environ['BELVO_ACCOUNTS_LIST']
+    url = f'{base_url}&institution={bank_code}'
 
     print('url to get accounts')
     print(url)
