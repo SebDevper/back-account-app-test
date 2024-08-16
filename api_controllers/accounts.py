@@ -30,7 +30,7 @@ def get_kpi(bank_accounts):
     total_expences = reduce(lambda a,b: a + b, expenses) if incomes else 0
     print(f'total expenses: {total_expences}')
 
-    return round(total_income - total_expences, 2) 
+    return round(total_income - total_expences, 2)
 
 
 def format_bank_data(bank_name, accounts):
@@ -68,3 +68,17 @@ def get_accounts():
 
 
     return {'status': 1, 'accounts': accounts_by_bank}
+
+def get_accounts_by_bank_from_api(bank_code: str):
+    url = f'{os.environ['BELVO_ACCOUNTS_LIST']}&institution={bank_code}'
+    print('url to get accounts')
+    print(url)
+    accounts_response = requests.get(
+        url,
+        auth=(
+            os.environ['BELVO_SECRET_ID'],
+            os.environ['BELVO_SECRET_PASSWORD']
+        )
+    )
+
+    return accounts_response.json().get('results', [])
